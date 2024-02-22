@@ -2,7 +2,7 @@ let openBtn = document.querySelector('.btn');
 let closeBtn = document.querySelector('.close')
 let wheel = document.querySelector('.wheel');
 let spinBtn = document.querySelector('.spinBtn');
-let value = Math.floor(Math.random() * 3600);
+let value = Math.ceil(Math.random() * 3600);
 let popup = document.getElementById("popup");
 
 
