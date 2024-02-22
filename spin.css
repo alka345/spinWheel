@@ -10,19 +10,33 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #333;
+    background-image: url('bcg1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.container{
+.popUp{
     position: relative;
+    margin-top: 300px;
+    margin-left: 350px;
     width: 400px;
     height: 400px;
     display: flex;
+    top: 0;
     justify-content: center;
+    transform: translate(-50%, -50%) scale(0.1);
     align-items: center;
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s ;
 }
 
-.container .spinBtn{
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.popUp .spinBtn{
     position: absolute;
     width: 60px;
     height: 60px;
@@ -42,17 +56,17 @@ body{
 
 }
 
-.container .spinBtn::before{
+.popUp .spinBtn::before{
     content: '';
     position: absolute;
     top: -28px;
     width: 20px;
     height: 30px;
-    background: #f00;
+    background: #fff;
     clip-path: polygon(50% 0% , 15% 100%, 85% 100%);
 }
 
-.container .wheel{
+.popUp .wheel{
     position: absolute;
     top: 0;
     left: 0;
@@ -64,10 +78,10 @@ body{
     box-shadow: 0 0 0 5px #333,
     0 0 0 15px #fff,
     0 0 0 18px #111;
-    transition: transfrom 5s ease-in-out;
+    transition: transfrom 2s ease-in-out;
 }
 
-.container .wheel .number{
+.popUp .wheel .number{
     position: absolute;
     width: 50%;
     height: 50%;
@@ -83,7 +97,7 @@ body{
 
 }
 
-.container .wheel .number span{
+.popUp .wheel .number span{
     position: relative;
     transform: rotate(45deg);
     font-size: 2em;
@@ -92,9 +106,22 @@ body{
     text-shadow: 3px 5px 2px rgba(0,0,0,0.15);
 }
 
-.container .wheel .number span::before{
+.popUp .wheel .number span::before{
     content: '';
     position: absolute;
     font-size: 0.75em;
     font-weight: 500;
+}
+
+.btn{
+
+    margin-left: 220px ;
+    padding: 10px 60px ;
+    background-color: #fff;
+    border:0 ;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
 }
